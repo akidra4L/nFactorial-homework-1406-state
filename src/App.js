@@ -2,6 +2,8 @@ import { useState } from "react";
 import { v4 as myNewId } from 'uuid';
 import "./App.css";
 
+const BACKEND_URL = "https://10.65.132.54:3000";
+
 // button-group
 const buttons = [
   {
@@ -24,20 +26,6 @@ const myLocalStorage = JSON.parse(localStorage.getItem('items')) || [];
 function App() {
   const [itemToDo, setItemToDo] = useState("");
   const [items, setItems] = useState(myLocalStorage);
-  // const [items, setItems] = useState([
-  //   {
-  //     key: 1,
-  //     label: "Have fun",
-  //   },
-  //   {
-  //     key: 2,
-  //     label: "Spread Empathy",
-  //   },
-  //   {
-  //     key: 3,
-  //     label: "Generate Value",
-  //   },
-  // ]);
 
   localStorage.setItem("items", JSON.stringify(items));
 
